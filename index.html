@@ -7,7 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .hero-bg {
-      background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+      background-image: url('./hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .posts-bg {
+      background-image: url('./posts.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .contact-bg {
+      background-image: url('./contact.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -44,27 +54,29 @@
   </section>
 
   <!-- Posts Section -->
-  <section id="posts" class="py-20 px-6 max-w-5xl mx-auto">
-    <h3 class="text-3xl font-semibold mb-10 text-center">Recent Highlights</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <h4 class="text-xl font-bold mb-2">📈 How AI Is Changing Retail Investing</h4>
-        <p class="text-gray-600">An overview of robo-advisors, AI-based stock recommendations, and challenges in democratizing investment tools.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <h4 class="text-xl font-bold mb-2">🤖 LLMs and Financial Narratives</h4>
-        <p class="text-gray-600">We explore how large language models can be used to generate, interpret, and fact-check financial news and analysis.</p>
+  <section id="posts" class="py-20 px-6 posts-bg text-white">
+    <div class="bg-black bg-opacity-60 py-12 px-6 max-w-5xl mx-auto rounded-xl">
+      <h3 class="text-3xl font-semibold mb-10 text-center">Recent Highlights</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-gray-900">
+          <h4 class="text-xl font-bold mb-2">📈 How AI Is Changing Retail Investing</h4>
+          <p>An overview of robo-advisors, AI-based stock recommendations, and challenges in democratizing investment tools.</p>
+        </div>
+        <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-gray-900">
+          <h4 class="text-xl font-bold mb-2">🤖 LLMs and Financial Narratives</h4>
+          <p>We explore how large language models can be used to generate, interpret, and fact-check financial news and analysis.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6">
-    <div class="max-w-xl mx-auto text-center">
+  <section id="contact" class="py-20 px-6 contact-bg text-white">
+    <div class="bg-black bg-opacity-60 py-12 px-6 max-w-xl mx-auto text-center rounded-xl">
       <h3 class="text-3xl font-semibold mb-6">Stay in Touch</h3>
-      <p class="text-gray-600 mb-6">Want to receive updates or give feedback? Drop your email below.</p>
+      <p class="mb-6">Want to receive updates or give feedback? Drop your email below.</p>
       <form class="flex flex-col space-y-4">
-        <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300" required />
+        <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
         <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Subscribe</button>
       </form>
     </div>
