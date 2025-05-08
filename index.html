@@ -7,17 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .hero-bg {
-      background-image: url('./hero.jpeg');
+      background-image: url('./hero.jpg');
       background-size: cover;
       background-position: center;
     }
     .posts-bg {
-      background-image: url('./posts.jpeg');
+      background-image: url('./posts.jpg');
       background-size: cover;
       background-position: center;
     }
     .contact-bg {
-      background-image: url('./contact.jpeg');
+      background-image: url('./contact.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -26,7 +26,10 @@
 <body class="bg-white text-gray-900">
   <!-- Navigation -->
   <header class="flex justify-between items-center p-6 shadow-md bg-white bg-opacity-90">
-    <h1 class="text-2xl font-bold text-blue-700">AlphaFinMind</h1>
+    <div class="flex items-center space-x-3">
+  <img src="./LOGO.png" alt="AlphaFinMind Logo" class="h-10 w-10 object-contain">
+  <span class="text-2xl font-bold text-blue-700">AlphaFinMind</span>
+</div>
     <nav class="space-x-6 text-gray-600">
       <a href="#mission" class="hover:text-blue-600">Mission</a>
       <a href="#posts" class="hover:text-blue-600">Posts</a>
