@@ -25,70 +25,122 @@
 </head>
 <body class="bg-white text-gray-900">
   
- <!-- Navigation -->
+<!-- Navigation -->
 <header class="flex justify-between items-center p-6 shadow-md bg-white bg-opacity-90">
   <div class="flex items-center">
     <img src="./LOGO_black_zoom_in.png" alt="AlphaFinMind Logo" class="h-24 w-auto object-contain ml-2">
   </div>
-  <nav class="space-x-6 text-gray-600">
-    <a href="#mission" class="hover:text-blue-600">Mission</a>
-    <a href="#posts" class="hover:text-blue-600">Posts</a>
-    <a href="#contact" class="hover:text-blue-600">Contact</a>
-  </nav>
-</header>
-  
-  <!-- Hero Section -->
-  <section class="text-center py-32 text-white hero-bg">
-    <div class="bg-black bg-opacity-60 py-12 px-6">
-      <h2 class="text-4xl font-bold mb-4">Exploring the Future of Finance with AI</h2>
-      <p class="text-lg mb-8 max-w-xl mx-auto">
-        AlphaFinMind is a content-driven initiative sharing insights, reflections, and trends at the intersection of artificial intelligence and financial systems. 
-      </p>
-      <a href="#posts" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700">Read Our Posts</a>
-    </div>
-  </section>
-
-  <!-- Mission Section -->
-  <section id="mission" class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-6">Our Mission</h3>
-    <p class="text-gray-600 text-lg">
-      We aim to build an engaged audience by publishing thoughtful weekly posts that explore how AI is transforming the world of finance. From algorithmic trading to behavioral analytics, our goal is to spark conversations and curiosity.
-    </p>
-  </section>
-
-  <!-- Posts Section -->
-  <section id="posts" class="py-20 px-6 posts-bg text-white">
-    <div class="bg-black bg-opacity-60 py-12 px-6 max-w-5xl mx-auto rounded-xl">
-      <h3 class="text-3xl font-semibold mb-10 text-center">Recent Highlights</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <a href="https://www.facebook.com/yourpage/posts/1234567890" target="_blank" class="block bg-white bg-opacity-90 p-4 rounded-xl shadow-md text-gray-900 hover:shadow-lg transition">
-          <img src="./fb-post-preview.jpeg" alt="Post image" class="rounded-md mb-3">
-          <h4 class="text-xl font-bold mb-1">📈 AI in Retail Investing</h4>
-          <p class="text-sm">Quick thoughts on how AI is reshaping retail investment strategies and what's next for robo-advisors...</p>
-        </a>
-        <a href="https://www.facebook.com/yourpage/posts/0987654321" target="_blank" class="block bg-white bg-opacity-90 p-4 rounded-xl shadow-md text-gray-900 hover:shadow-lg transition">
-          <img src="./fb-post-preview.jpeg" alt="Post image" class="rounded-md mb-3">
-          <h4 class="text-xl font-bold mb-1">🤖 LLMs & Financial News</h4>
-          <p class="text-sm">Exploring how large language models can be used to filter, interpret, and summarize complex financial narratives...</p>
-        </a>
+  <div class="flex items-center space-x-6">
+    <!-- Dropdown -->
+    <nav class="relative group text-gray-600">
+      <div class="inline-block cursor-pointer hover:text-blue-600">
+        <span class="lang lang-zh">分类 ▼</span>
+        <span class="lang lang-en hidden">Menu ▼</span>
+        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-md z-10 min-w-[120px] text-left">
+          <a href="#mission" class="block px-4 py-2 hover:bg-blue-50">
+            <span class="lang lang-zh">使命</span>
+            <span class="lang lang-en hidden">Mission</span>
+          </a>
+          <a href="#posts" class="block px-4 py-2 hover:bg-blue-50">
+            <span class="lang lang-zh">文章</span>
+            <span class="lang lang-en hidden">Posts</span>
+          </a>
+          <a href="#contact" class="block px-4 py-2 hover:bg-blue-50">
+            <span class="lang lang-zh">联系</span>
+            <span class="lang lang-en hidden">Contact</span>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 contact-bg text-white">
-    <div class="bg-black bg-opacity-60 py-12 px-6 max-w-xl mx-auto text-center rounded-xl">
-      <h3 class="text-3xl font-semibold mb-6">Stay in Touch</h3>
-      <p class="mb-6">Want to receive updates or give feedback? Drop your email below.</p>
-      <form class="flex flex-col space-y-4">
-        <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
-        <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Subscribe</button>
-      </form>
+    <!-- Language Switch -->
+    <div class="space-x-2">
+      <button onclick="setLanguage('zh')" class="text-gray-600 hover:text-blue-600">中文</button>
+      <button onclick="setLanguage('en')" class="text-gray-600 hover:text-blue-600">EN</button>
     </div>
-  </section>
+  </div>
+</header>
 
-  <footer class="text-center py-6 text-gray-500 text-sm bg-gray-100">
-    © 2025 AlphaFinMind. All rights reserved.
-  </footer>
+<!-- Hero Section -->
+<section class="text-center py-32 text-white hero-bg">
+  <div class="bg-black bg-opacity-60 py-12 px-6">
+    <h2 class="text-4xl font-bold mb-4 lang lang-en">Exploring the Future of Finance with AI</h2>
+    <h2 class="text-4xl font-bold mb-4 lang lang-zh hidden">人工智能引领金融未来</h2>
+    <p class="text-lg mb-8 max-w-xl mx-auto lang lang-en">
+      AlphaFinMind is a content-driven initiative sharing insights, reflections, and trends at the intersection of artificial intelligence and financial systems.
+    </p>
+    <p class="text-lg mb-8 max-w-xl mx-auto lang lang-zh hidden">
+      AlphaFinMind 是一个专注于人工智能与金融交汇点的内容平台，分享洞察、思考与趋势。
+    </p>
+    <a href="#posts" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 lang lang-en">Read Our Posts</a>
+    <a href="#posts" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 lang lang-zh hidden">查看文章</a>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section id="mission" class="py-20 px-6 max-w-4xl mx-auto text-center">
+  <h3 class="text-3xl font-semibold mb-6 lang lang-en">Our Mission</h3>
+  <h3 class="text-3xl font-semibold mb-6 lang lang-zh hidden">我们的使命</h3>
+  <p class="text-gray-600 text-lg lang lang-en">
+    We aim to build an engaged audience by publishing thoughtful weekly posts that explore how AI is transforming the world of finance. From algorithmic trading to behavioral analytics, our goal is to spark conversations and curiosity.
+  </p>
+  <p class="text-gray-600 text-lg lang lang-zh hidden">
+    我们希望通过每周发布深入内容，探索人工智能如何重塑金融世界，从算法交易到行为分析，激发讨论与好奇心。
+  </p>
+</section>
+
+<!-- Posts Section -->
+<section id="posts" class="py-20 px-6 posts-bg text-white">
+  <div class="bg-black bg-opacity-60 py-12 px-6 max-w-5xl mx-auto rounded-xl">
+    <h3 class="text-3xl font-semibold mb-10 text-center lang lang-en">Recent Highlights</h3>
+    <h3 class="text-3xl font-semibold mb-10 text-center lang lang-zh hidden">近期精选</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <a href="https://www.facebook.com/yourpage/posts/1234567890" target="_blank" class="block bg-white bg-opacity-90 p-4 rounded-xl shadow-md text-gray-900 hover:shadow-lg transition">
+        <img src="./fb-post-preview.jpeg" alt="Post image" class="rounded-md mb-3">
+        <h4 class="text-xl font-bold mb-1">📈 AI in Retail Investing</h4>
+        <p class="text-sm lang lang-en">Quick thoughts on how AI is reshaping retail investment strategies and what's next for robo-advisors...</p>
+        <p class="text-sm lang lang-zh hidden">简述人工智能如何改变散户投资策略，以及机器人顾问的未来发展方向……</p>
+      </a>
+      <a href="https://www.facebook.com/yourpage/posts/0987654321" target="_blank" class="block bg-white bg-opacity-90 p-4 rounded-xl shadow-md text-gray-900 hover:shadow-lg transition">
+        <img src="./fb-post-preview.jpeg" alt="Post image" class="rounded-md mb-3">
+        <h4 class="text-xl font-bold mb-1">🤖 LLMs & Financial News</h4>
+        <p class="text-sm lang lang-en">Exploring how large language models can be used to filter, interpret, and summarize complex financial narratives...</p>
+        <p class="text-sm lang lang-zh hidden">探索大语言模型如何用于过滤、解读并总结复杂的金融资讯内容……</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-6 contact-bg text-white">
+  <div class="bg-black bg-opacity-60 py-12 px-6 max-w-xl mx-auto text-center rounded-xl">
+    <h3 class="text-3xl font-semibold mb-6 lang lang-en">Stay in Touch</h3>
+    <h3 class="text-3xl font-semibold mb-6 lang lang-zh hidden">保持联系</h3>
+    <p class="mb-6 lang lang-en">Want to receive updates or give feedback? Drop your email below.</p>
+    <p class="mb-6 lang lang-zh hidden">想获取最新内容或提供反馈？请留下您的邮箱。</p>
+    <form class="flex flex-col space-y-4">
+      <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
+      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-en">Subscribe</button>
+      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-zh hidden">订阅</button>
+    </form>
+  </div>
+</section>
+
+<footer class="text-center py-6 text-gray-500 text-sm bg-gray-100">
+  © 2025 AlphaFinMind. All rights reserved.
+</footer>
+
+<script>
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => {
+      if (el.classList.contains('lang-' + lang)) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
