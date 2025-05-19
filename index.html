@@ -31,27 +31,31 @@
     <img src="./LOGO_black_zoom_in.png" alt="AlphaFinMind Logo" class="h-24 w-auto object-contain ml-2">
   </div>
   <div class="flex items-center space-x-6">
-    <!-- Dropdown -->
-    <nav class="relative group text-gray-600">
-      <div class="inline-block cursor-pointer hover:text-blue-600">
-        <span class="lang lang-zh">分类 ▼</span>
-        <span class="lang lang-en hidden">Menu ▼</span>
-        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-md z-10 min-w-[120px] text-left">
-          <a href="#mission" class="block px-4 py-2 hover:bg-blue-50">
-            <span class="lang lang-zh">使命</span>
-            <span class="lang lang-en hidden">Mission</span>
-          </a>
-          <a href="#posts" class="block px-4 py-2 hover:bg-blue-50">
-            <span class="lang lang-zh">文章</span>
-            <span class="lang lang-en hidden">Posts</span>
-          </a>
-          <a href="#contact" class="block px-4 py-2 hover:bg-blue-50">
-            <span class="lang lang-zh">联系</span>
-            <span class="lang lang-en hidden">Contact</span>
-          </a>
-        </div>
-      </div>
-    </nav>
+    
+    <!-- Dropdown Menu Navigation -->
+<nav class="relative text-gray-600" id="menuWrapper">
+  <!-- 图标按钮 -->
+  <button id="menuButton" class="flex items-center space-x-2 hover:text-blue-600 focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    <span class="lang lang-zh">分类</span>
+    <span class="lang lang-en hidden">Menu</span>
+  </button>
+
+  <!-- 下拉菜单 -->
+  <div id="dropdownMenu" class="transition-all duration-300 opacity-0 scale-95 invisible absolute bg-white shadow-md mt-2 rounded-md z-10 min-w-[120px] text-left">
+    <a href="#mission" class="block px-4 py-2 hover:bg-blue-50">
+      <span class="lang lang-zh">使命</span><span class="lang lang-en hidden">Mission</span>
+    </a>
+    <a href="#posts" class="block px-4 py-2 hover:bg-blue-50">
+      <span class="lang lang-zh">文章</span><span class="lang lang-en hidden">Posts</span>
+    </a>
+    <a href="#contact" class="block px-4 py-2 hover:bg-blue-50">
+      <span class="lang lang-zh">联系</span><span class="lang lang-en hidden">Contact</span>
+    </a>
+  </div>
+</nav>
 
     <!-- Language Switch -->
     <div class="space-x-2">
@@ -131,6 +135,7 @@
 </footer>
 
 <script>
+  // 多语言切换逻辑
   function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => {
       if (el.classList.contains('lang-' + lang)) {
@@ -140,7 +145,56 @@
       }
     });
   }
-</script>
 
-</body>
-</html>
+  // 分类菜单展开逻辑
+  const menuButton = document.getElementById("menuButton");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  const menuWrapper = document.getElementById("menuWrapper");
+
+  let hideTimeout;
+  let isClickedOpen = false;
+
+  function showMenu() {
+    clearTimeout(hideTimeout);
+    dropdownMenu.classList.remove("invisible", "opacity-0", "scale-95");
+    dropdownMenu.classList.add("visible", "opacity-100", "scale-100");
+  }
+
+  function hideMenu() {
+    dropdownMenu.classList.remove("visible", "opacity-100", "scale-100");
+    dropdownMenu.classList.add("opacity-0", "scale-95");
+    setTimeout(() => {
+      dropdownMenu.classList.add("invisible");
+      isClickedOpen = false;
+    }, 300); // 动画持续时间
+  }
+
+  menuWrapper.addEventListener("mouseenter", () => {
+    if (!isClickedOpen) showMenu();
+  });
+
+  menuWrapper.addEventListener("mouseleave", () => {
+    if (!isClickedOpen) {
+      hideTimeout = setTimeout(() => {
+        hideMenu();
+      }, 2000); // 延迟 2 秒关闭
+    }
+  });
+
+  menuButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (dropdownMenu.classList.contains("invisible")) {
+      showMenu();
+      isClickedOpen = true;
+    } else {
+      hideMenu();
+    }
+  });
+
+  // 点击页面其他地方时关闭
+  document.addEventListener("click", (e) => {
+    if (!menuWrapper.contains(e.target)) {
+      if (isClickedOpen) hideMenu();
+    }
+  });
+</script>
