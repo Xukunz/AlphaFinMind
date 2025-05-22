@@ -39,14 +39,14 @@
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
     </svg>
-    <span class="lang lang-zh">分类</span>
     <span class="lang lang-en hidden">Menu</span>
+    <span class="lang lang-zh">分类</span>
   </button>
 
   <!-- 下拉菜单 -->
   <div id="dropdownMenu" class="transition-all duration-300 opacity-0 scale-95 invisible absolute bg-white shadow-md mt-2 rounded-md z-10 min-w-[120px] text-left">
     <a href="#mission" class="block px-4 py-2 hover:bg-blue-50">
-      <span class="lang lang-zh">使命</span><span class="lang lang-en hidden">Mission</span>
+      <span class="lang lang-zh">任务</span><span class="lang lang-en hidden">Mission</span>
     </a>
     <a href="#posts" class="block px-4 py-2 hover:bg-blue-50">
       <span class="lang lang-zh">文章</span><span class="lang lang-en hidden">Posts</span>
@@ -177,7 +177,7 @@
     if (!isClickedOpen) {
       hideTimeout = setTimeout(() => {
         hideMenu();
-      }, 2000); // 延迟 2 秒关闭
+      }, 1000); // 延迟 1 秒关闭
     }
   });
 
