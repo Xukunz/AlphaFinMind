@@ -135,8 +135,8 @@
 </footer>
 
 <script>
-  // 多语言切换逻辑
   function setLanguage(lang) {
+    // 控制内容显示
     document.querySelectorAll('.lang').forEach(el => {
       if (el.classList.contains('lang-' + lang)) {
         el.classList.remove('hidden');
@@ -144,7 +144,23 @@
         el.classList.add('hidden');
       }
     });
+
+    // 高亮当前语言按钮（可加 CSS 样式）
+    document.querySelectorAll('.lang-switch').forEach(btn => {
+      btn.classList.remove('text-blue-600', 'font-bold');
+    });
+    document.querySelector('.lang-switch[data-lang="' + lang + '"]').classList.add('text-blue-600', 'font-bold');
+
+    // 保存语言到 localStorage（可选）
+    localStorage.setItem('preferredLang', lang);
   }
+
+  // 初始加载时检测语言偏好
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+  });
+</script>
 
   // 分类菜单展开逻辑
   const menuButton = document.getElementById("menuButton");
