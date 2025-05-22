@@ -122,12 +122,12 @@
     <h3 class="text-3xl font-semibold mb-6 lang lang-zh hidden">保持联系</h3>
     <p class="mb-6 lang lang-en">Want to receive updates or give feedback? Drop your email below.</p>
     <p class="mb-6 lang lang-zh hidden">想获取最新内容或提供反馈？请留下您的邮箱。</p>
-    <form action="https://formsubmit.co/admin@alphafinmind.top" method="POST" class="flex flex-col space-y-4">
-      <input type="email" name="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
+    <form id="contactForm" action="https://formsubmit.co/admin@alphafinmind.top" method="POST" class="flex flex-col space-y-4">
+    <input type="email" name="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
 
       <!-- 防垃圾邮件 -->
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://www.alphafinmind.top/thankyou.html">
+      <input type="hidden" name="_next" id="nextPage" value="">
 
       <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-en">Send</button>
       <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-zh hidden">发送</button>
@@ -164,6 +164,15 @@
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
+    // 设置感谢页面跳转路径
+    const nextPageField = document.getElementById('nextPage');
+    if (nextPageField) {
+      if (savedLang === 'zh') {
+        nextPageField.value = "https://www.alphafinmind.top/thankyou_zh.html";
+      } else {
+        nextPageField.value = "https://www.alphafinmind.top/thankyou_en.html";
+      }
+    }
   });
 
   // 分类菜单展开逻辑
