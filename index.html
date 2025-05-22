@@ -125,16 +125,22 @@
     <h3 class="text-3xl font-semibold mb-6 lang lang-zh hidden">保持联系</h3>
     <p class="mb-6 lang lang-en">Want to receive updates or give feedback? Drop your email below.</p>
     <p class="mb-6 lang lang-zh hidden">想获取最新内容或提供反馈？请留下您的邮箱。</p>
-    <form id="contactForm" action="https://formsubmit.co/admin@alphafinmind.top" method="POST" class="flex flex-col space-y-4">
-    <input type="email" name="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required />
-
-      <!-- 防垃圾邮件 -->
+    <!-- 中文表单 -->
+    <form action="https://formsubmit.co/admin@alphafinmind.top" method="POST" class="flex flex-col space-y-4 lang lang-zh">
+      <input type="email" name="email" placeholder="请输入您的邮箱" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required>
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" id="nextPage" value="">
-
-      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-en">Send</button>
-      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 lang lang-zh hidden">发送</button>
+      <input type="hidden" name="_next" value="https://www.alphafinmind.top/thankyou_zh.html">
+      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">发送</button>
     </form>
+
+    <!-- 英文表单 -->
+    <form action="https://formsubmit.co/admin@alphafinmind.top" method="POST" class="flex flex-col space-y-4 lang lang-en hidden">
+      <input type="email" name="email" placeholder="Your email address" class="px-4 py-3 rounded-lg border border-gray-300 text-gray-900" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://www.alphafinmind.top/thankyou_en.html">
+      <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Send</button>
+    </form>
+
   </div>
 </section>
 
